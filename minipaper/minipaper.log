@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.28)  19 MAY 2022 10:14
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.28)  19 MAY 2022 11:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -718,11 +718,11 @@ File: pic/figure4_1.png Graphic file (type bmp)
 File: pic/figure4_2.png Graphic file (type bmp)
 <pic/figure4_2.png>
  [4]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 308.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 307.
  (c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 )
-Overfull \hbox (5.20241pt too wide) in paragraph at lines 333--348
+Overfull \hbox (5.20241pt too wide) in paragraph at lines 332--347
  [][] 
  []
 
@@ -738,14 +738,14 @@ Missing character: There is no – in font ptmr8t!
 Missing character: There is no – in font ptmr8t!
 Missing character: There is no – in font ptmr8t!
 ) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 388.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 388.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 387.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 387.
  (./minipaper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 388.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 388.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 387.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 387.
 Package rerunfilecheck Info: File `minipaper.out' has not changed.
 (rerunfilecheck)             Checksum: D377FED09B3EDE9F6D0D9F6BFAD101E8;836.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 388.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 387.
  ) 
 Here is how much of TeX's memory you used:
  23171 strings out of 479418

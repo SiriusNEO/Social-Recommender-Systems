@@ -95,7 +95,7 @@
   recommending approach. However, there is still 
   much information in social networks
   waiting for us to extract.
-  In this paper, we try to improve it 
+  In this paper, we try to improve this model 
   by weighing friends with similarity, influence and familiarity.
   We perform empirical studies 
   on three different datasets to compare their effectiveness.
@@ -119,18 +119,17 @@ have similar ratings.
 However, this method does not make 
 the most of information in the network. A basic observation is that people treat 
 their friends or followees differently in the real world.
-In this paper, we propose two possible factors abstracted from real social relationship:
+In this paper, we adopt two possible factors abstracted from real social relationship:
 influence and familiarity, which is able to be analyzed in the network. 
 With these adjustments, \textbf{Triple Social Regularization (TriSR)} is proposed by using the triple 
 $Tri = (similarity, influence, familiarity)$ 
 to weigh the friendship in social network. The experimental result shows
-that TriSR has a slight improvement on most of datasets on the average.
+that TriSR has a slight improvement on most of datasets averagely.
 
 The rest of this paper is organized as follows: 
 Sec.\ref{related_work} 
 provides an overview of related approaches which our work is based on, including MF and SR.
-Sec.\ref{method} mainly presents our TriSR model and 
-introduces some implementation details. 
+Sec.\ref{method} mainly presents our TriSR method. 
 Sec.\ref{experiments} shows the empirical research we perform on our 
 self-implemented benchmark. The conclusions are drawn in Sec.\ref{conclusion}. 
 
@@ -168,7 +167,7 @@ Many social recommending approaches \cite{ma2011rsr, jam2010trust, ma2009rste} a
 \subsection{Social Regularization}
 SR improves MF by utilizing information in social network. Different websites 
 have different social systems, with network being directed or undirected and weighed 
-or unweighed. Our work simplifies the network as a undirected graph $G(V, E)$. 
+or unweighed. In our problem definition, we simplifies the network as an undirected graph $G(V, E)$. 
 
 \begin{figure}[h]
   \centering
@@ -186,7 +185,7 @@ Pearson Correlation Coefficient (PCC) \cite{bre1998pcc}.
 
 \begin{equation}
   {Sim}(u, v) = \frac{\sum_{I_{ui} I_{vi} = 1} (R_{ui} - \overline{R_u}) (R_{vi} - \overline{R_v}) }
-  {\sqrt{\sum_{I_{ui} I_{vi} = 1} (R_{ui} - \overline{R_u})} \cdot \sqrt{\sum_{I_{ui} I_{vi} = 1} (R_{vi} - \overline{R_v})}}
+  {\sqrt{\sum_{I_{ui} I_{vi} = 1} (R_{ui} - \overline{R_u})^2} \cdot \sqrt{\sum_{I_{ui} I_{vi} = 1} (R_{vi} - \overline{R_v})^2}}
 \end{equation}
 
 And the model is proposed by minimizing the loss
@@ -218,7 +217,7 @@ The influence can be analyzed iteratively by a Markov Process.
 \end{equation}
 where $p$ is a hyperparameter usually set to $0.85$. 
 Fig 3. illustrates the distribution of the influence in our datasets 
-with characteristics of power law distribution.
+which factually obeys power law distribution.
 \begin{figure}[h]    
     \centering
     \begin{subfigure}{0.33\textwidth}
@@ -239,7 +238,7 @@ with characteristics of power law distribution.
   \caption{The Distribution of Influence}
 \end{figure}
 \subsection{Familiarity}
-Another noteworthiness weight is the familiarity between users in real world
+Another noteworthy weight is the familiarity between users in real world
 because familiars not only have a greater chance to recommend but a higher credibility 
 based on the idea that "familiars will not cheat us". 
 
@@ -309,7 +308,7 @@ To provide a conprehensive view, we adopt the following methods as competitors.
   \item \textbf{ItemMean} predicts the rating $(user, item, score)$ by the average rated scores of $item$.
   \item \textbf{UserCF} is a Collaborative Filtering algorithm focusing on users. 
   It predicts the rating $(user, item, score)$ by the average rating scores of 
-  some relatively similar users of $user$.
+  Top-N most similar users of $user$.
   \item \textbf{ItemCF} \cite{Sarwar2001ItembasedCF} is the same with UserCF but it focuses on items.
   \item \textbf{MF} is the matrix factorization method.
   \item \textbf{SR} is a matrix factorization with social regularization based on similarity.
@@ -353,7 +352,7 @@ only do some experiments in $\alpha$ and $\gamma$ on Douban dataset.
 As is shown in Fig 5. , a large parameter ($\sim 10^2$) 
 leads to a catastrophe but a small one ($\sim 10^{-2}$) does not lose too much performance 
 because it approximates to the SR model. 
-And $\alpha=2$, $\gamma=5$ ($\sim 10^{0}$) is relatively optimal.
+And it also shows that $\alpha=2$, $\gamma=5$ ($\sim 10^{0}$) is relatively optimal.
 \begin{figure}[h]    
   \centering
   \begin{subfigure}{0.4\textwidth}
@@ -371,16 +370,16 @@ And $\alpha=2$, $\gamma=5$ ($\sim 10^{0}$) is relatively optimal.
 \section{Conclusion}
 \label{conclusion}
 The result shows that TriSR has a slightly better performance in most cases, except 
-the RMSE metric in Dianping. The reason might be that Dianping is a platform 
-concentrating more on items, which also explain that ItemMean performs better in this test point. 
+the RMSE metric in Dianping. A possible explanation might be that Dianping is a platform 
+concentrating more on items, which also explains that ItemMean performs better in this test point. 
 
-Based on this idea, we may classify different recommender systems two categories: 
+Based on this idea, we can classify different recommender systems into two categories: 
 user-oriendted and item-oriented, by comparing the performance of UserMean and ItemMean.
-TriSR may gain a better performance in a user-oriented platform due to
+TriSR has a better performance in a user-oriented platform like Douban and Epinions due to
 our utilization of users' social information.
 
 However, the improvement is not so much as we except. Further work on item-oriented 
-platform and directed social network is needed. 
+platforms and directed social network is needed. 
 
 \bibliographystyle{abbrv}
 \bibliography{references}
