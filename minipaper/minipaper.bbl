@@ -1,0 +1,79 @@
+\begin{thebibliography}{10}
+
+\bibitem{bre1998pcc}
+J.~S. Breese, D.~Heckerman, and C.~Kadie.
+\newblock Empirical analysis of predictive algorithms for collaborative
+  filtering.
+\newblock In {\em Proceedings of the Fourteenth Conference on Uncertainty in
+  Artificial Intelligence}, UAI'98, page 43–52, San Francisco, CA, USA, 1998.
+  Morgan Kaufmann Publishers Inc.
+
+\bibitem{ser1998pagerank}
+S.~Brin and L.~Page.
+\newblock The anatomy of a large-scale hypertextual web search engine.
+\newblock {\em Computer Networks and ISDN Systems}, 30(1):107--117, 1998.
+\newblock Proceedings of the Seventh International World Wide Web Conference.
+
+\bibitem{jam2010trust}
+M.~Jamali and M.~Ester.
+\newblock A matrix factorization technique with trust propagation for
+  recommendation in social networks.
+\newblock In {\em Proceedings of the Fourth ACM Conference on Recommender
+  Systems}, RecSys '10, page 135–142, New York, NY, USA, 2010. Association
+  for Computing Machinery.
+
+\bibitem{ko2009mf}
+Y.~Koren, R.~Bell, and C.~Volinsky.
+\newblock Matrix factorization techniques for recommender systems.
+\newblock {\em Computer}, 42(8):30–37, aug 2009.
+
+\bibitem{dianpingds}
+H.~Li, D.~Wu, W.~Tang, and N.~Mamoulis.
+\newblock Overlapping community regularization for rating prediction in social
+  recommender systems.
+\newblock In {\em RecSys}, pages 27--34, 2015.
+
+\bibitem{ma2009rste}
+H.~Ma, I.~King, and M.~R. Lyu.
+\newblock Learning to recommend with social trust ensemble.
+\newblock In {\em Proceedings of the 32nd International ACM SIGIR Conference on
+  Research and Development in Information Retrieval}, SIGIR '09, page
+  203–210, New York, NY, USA, 2009. Association for Computing Machinery.
+
+\bibitem{ma2011rsr}
+H.~Ma, D.~Zhou, C.~Liu, M.~R. Lyu, and I.~King.
+\newblock Recommender systems with social regularization.
+\newblock In {\em Proceedings of the Fourth ACM International Conference on Web
+  Search and Data Mining}, WSDM '11, page 287–296, New York, NY, USA, 2011.
+  Association for Computing Machinery.
+
+\bibitem{epinionsds}
+P.~Massa and P.~Avesani.
+\newblock Trust-aware recommender systems.
+\newblock In {\em Proceedings of the 2007 ACM Conference on Recommender
+  Systems}, RecSys '07, page 17–24, New York, NY, USA, 2007. Association for
+  Computing Machinery.
+
+\bibitem{Sarwar2001ItembasedCF}
+B.~M. Sarwar, G.~Karypis, J.~A. Konstan, and J.~Riedl.
+\newblock Item-based collaborative filtering recommendation algorithms.
+\newblock In {\em WWW '01}, 2001.
+
+\bibitem{liang2012pr}
+L.~Xiang.
+\newblock Recommendation system practice.
+\newblock page 162, 1 2012.
+
+\bibitem{zhang2016voterank}
+J.-X. Zhang, D.~Chen, Q.~Dong, and Z.-D. Zhao.
+\newblock Identifying a set of influential spreaders in complex networks.
+\newblock {\em Scientific Reports}, 6, 01 2016.
+
+\bibitem{doubands}
+J.~Zheng, J.~Liu, C.~Shi, F.~Zhuang, J.~Li, and B.~Wu.
+\newblock Dual similarity regularization for recommendation.
+\newblock In J.~Bailey, L.~Khan, T.~Washio, G.~Dobbie, J.~Z. Huang, and
+  R.~Wang, editors, {\em Advances in Knowledge Discovery and Data Mining},
+  pages 542--554, Cham, 2016. Springer International Publishing.
+
+\end{thebibliography}
