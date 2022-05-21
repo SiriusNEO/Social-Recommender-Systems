@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.28)  19 MAY 2022 11:58
+This is XeTeX, Version 3.14159265-2.6-0.999992 (TeX Live 2020/W32TeX) (preloaded format=xelatex 2021.1.28)  21 MAY 2022 10:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -710,26 +710,30 @@ File: pic/figure3_1.png Graphic file (type bmp)
 <pic/figure3_1.png>
 File: pic/figure3_2.png Graphic file (type bmp)
 <pic/figure3_2.png>
-File: pic/figure3_3.png Graphic file (type bmp)
-<pic/figure3_3.png>
- [3]
 File: pic/figure4_1.png Graphic file (type bmp)
 <pic/figure4_1.png>
 File: pic/figure4_2.png Graphic file (type bmp)
 <pic/figure4_2.png>
- [4]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 307.
- (c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-)
-Overfull \hbox (5.20241pt too wide) in paragraph at lines 332--347
- [][] 
- []
-
+File: pic/figure4_3.png Graphic file (type bmp)
+<pic/figure4_3.png>
+ [3]
 File: pic/figure5_1.png Graphic file (type bmp)
 <pic/figure5_1.png>
 File: pic/figure5_2.png Graphic file (type bmp)
 <pic/figure5_2.png>
+ [4]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 312.
+ (c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+)
+Overfull \hbox (5.20241pt too wide) in paragraph at lines 337--352
+ [][] 
+ []
+
+File: pic/figure6_1.png Graphic file (type bmp)
+<pic/figure6_1.png>
+File: pic/figure6_2.png Graphic file (type bmp)
+<pic/figure6_2.png>
 [5] (./minipaper.bbl
 Missing character: There is no – in font ptmr8t!
 Missing character: There is no – in font ptmr8t!
@@ -738,20 +742,20 @@ Missing character: There is no – in font ptmr8t!
 Missing character: There is no – in font ptmr8t!
 Missing character: There is no – in font ptmr8t!
 ) [6]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 387.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 387.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 392.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 392.
  (./minipaper.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 387.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 387.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 392.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 392.
 Package rerunfilecheck Info: File `minipaper.out' has not changed.
 (rerunfilecheck)             Checksum: D377FED09B3EDE9F6D0D9F6BFAD101E8;836.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 387.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 392.
  ) 
 Here is how much of TeX's memory you used:
- 23171 strings out of 479418
- 412933 string characters out of 5888105
- 680521 words of memory out of 5000000
- 40256 multiletter control sequences out of 15000+600000
+ 23183 strings out of 479418
+ 413153 string characters out of 5888105
+ 680536 words of memory out of 5000000
+ 40266 multiletter control sequences out of 15000+600000
  554804 words of font info for 58 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  60i,9n,60p,395b,549s stack positions out of 5000i,500n,10000p,200000b,80000s

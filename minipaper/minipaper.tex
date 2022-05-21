@@ -43,7 +43,7 @@
 \usepackage{amsfonts}
 \usepackage{tikz}
 
-\title{Regularization with Analysis in Social Network for Recommender Systems}
+\title{Tridimensional Regularization with Analysis in Social Network for Recommender Systems}
 
 
 % The \author macro works with any number of authors. There are two commands
@@ -121,10 +121,11 @@ the most of information in the network. A basic observation is that people treat
 their friends or followees differently in the real world.
 In this paper, we adopt two possible factors abstracted from real social relationship:
 influence and familiarity, which is able to be analyzed in the network. 
-With these adjustments, \textbf{Triple Social Regularization (TriSR)} is proposed by using the triple 
+With these adjustments, \textbf{Tridimensional Social Regularization (TriSR)} 
+is proposed by using a tridimensional distance 
 $Tri = (similarity, influence, familiarity)$ 
 to weigh the friendship in social network. The experimental result shows
-that TriSR has a slight improvement on most of datasets averagely.
+that TriSR has a slight improvement on most of our datasets averagely.
 
 The rest of this paper is organized as follows: 
 Sec.\ref{related_work} 
@@ -138,7 +139,7 @@ self-implemented benchmark. The conclusions are drawn in Sec.\ref{conclusion}.
 
 \subsection{Matrix Factorization}
 
-MF adopts the idea that we can use some latent features to 
+MF adopts the idea that we can use some latent features (e.g. "Character" and "Plot" for movies) to 
 describe an item. Under this assumption, different tastes of users 
 and various items are all regarded as weigh vectors. 
 \begin{figure}[h]
@@ -147,11 +148,7 @@ and various items are all regarded as weigh vectors.
   \caption{A Matrix Factorization Example with Dimension of Latent Features $=2$}
 \end{figure} 
 
-As it is shown in Fig.1 which takes movie as an example, 
-there are two main features "Character" and "Plot". A user
-pays different attentions to these features and movies also vary in these features. 
-
-Hence this model introduces user-matrix $U_{m \times d}$ and item-matrix $V_{n \times d}$, with 
+This model introduces a user-matrix $U_{m \times d}$ and an item-matrix $V_{n \times d}$, with 
 $U_{ij}$ being the attention user $i$ pays in feature $j$, and $V_{kj}$ be the score of item $k$ 
 earns in feature $j$. It predicts the rating matrix $R_{m \times n}$ (i.e. $R_{ij}: $ the rating of user $i$ on item $j$) 
 by $R \approx U V^T$. The model can be trained by minimizing the distance
@@ -165,19 +162,15 @@ where $m$ is the number of users, $n$ is the number of items, $\mathcal{N}(i)$ i
 the neighbours of user i, $I_{ij} \in \{0, 1\}$ indicates whether user $i$ has rated item $j$. 
 Many social recommending approaches \cite{ma2011rsr, jam2010trust, ma2009rste} are based on this framework.
 \subsection{Social Regularization}
-SR improves MF by utilizing information in social network. Different websites 
-have different social systems, with network being directed or undirected and weighed 
-or unweighed. In our problem definition, we simplifies the network as an undirected graph $G(V, E)$. 
+SR improves MF by utilizing information in social network. Fig 2. shows an exmaple in real world rating website. The key idea is that a movie 
+received many positive feedbacks among your friends will more probably attract you. 
+Therefore it is rational that the user in Fig 2. gives "Star Wars" a high score. 
 
 \begin{figure}[h]
   \centering
   \includegraphics[scale=0.35]{pic/figure2.png}
   \caption{A Social Network Constraint Example}
 \end{figure}
-
-Fig 2. shows an exmaple in real world rating website. The key idea is that a movie 
-received many positive feedbacks among your friends will more probably attract you. 
-Therefore it is rational that the user in Fig 2. gives "Star Wars" a high score. 
 
 However, the friendship does not always bring consensus, which inspires us to introduce 
 a similarity to weigh our friends. The most widely used method is 
@@ -195,13 +188,25 @@ And the model is proposed by minimizing the loss
 \section{Method}
 \label{method}
 Still there are some limitations in SR as it weighs friends only by similarity. 
-We improves SR by further analyzing the network and using a compound weight. To be specific, 
-our TriSR use a triple $Tri(i, u)$ to weigh the relationship between $i$ and $u$ which is defined as \\
+We improves SR by further analyzing the network and adding two dimensions: influence and familiarity. To be specific, 
+our TriSR uses $Tri(i, u)$ to weigh the relationship between $i$ and $u$ which is defined as \\
 \begin{equation}
   Tri(i, u) = \sqrt{(\alpha {Inf}(u))^2 + (\beta {Sim}(i, u))^2 + (\gamma {Fam}(i, u))^2 }
 \end{equation}
 
 where ${Inf}(u)$ is the influence of $u$ and $Fam(i, u)$ is the familiarity between $i$ and $u$. 
+\begin{figure}[h]    
+  \centering
+  \begin{subfigure}{0.26\textwidth}
+    \centering
+      \includegraphics[width=1\linewidth]{pic/figure3_1.png}
+  \end{subfigure}%
+  \begin{subfigure}{0.26\textwidth}
+  \centering
+      \includegraphics[width=1\linewidth]{pic/figure3_2.png}
+  \end{subfigure}%
+\caption{Comparsion between $Sim(i,u)$ (1 dimension) and $Tri(i,u)$ (3 dimensions)}
+\end{figure}
 \subsection{Influence Analysis}
 
 The influence in a network obeys the Power Law Distribution, 
@@ -211,28 +216,28 @@ which inspires us to adjust our model by influence.
 
 Influence Analysis is a traditional topic and there are many recent approaches like VoteRank \cite{zhang2016voterank}.
 But we choose the classical PageRank \cite{ser1998pagerank} due to its high effectiveness in online situation. 
-The influence can be analyzed iteratively by a Markov Process.
+The influence can be analyzed iteratively through a Markov Process.
 \begin{equation}
    Inf^t(i) = p \sum_{v \in \mathcal{N}(i)} \frac{Inf^{t-1}(v)}{\deg(v)} + (1-p) \cdot \frac{1}{m}
 \end{equation}
 where $p$ is a hyperparameter usually set to $0.85$. 
-Fig 3. illustrates the distribution of the influence in our datasets 
+Fig 4. illustrates the distribution of the influence in our datasets 
 which factually obeys power law distribution.
 \begin{figure}[h]    
     \centering
     \begin{subfigure}{0.33\textwidth}
       \centering
-        \includegraphics[width=1\linewidth]{pic/figure3_1.png}
+        \includegraphics[width=1\linewidth]{pic/figure4_1.png}
       \caption{Douban}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
     \centering
-        \includegraphics[width=1\linewidth]{pic/figure3_2.png}
+        \includegraphics[width=1\linewidth]{pic/figure4_2.png}
       \caption{Dianping}
     \end{subfigure}%
     \begin{subfigure}{0.33\textwidth}
       \centering
-        \includegraphics[width=1\linewidth]{pic/figure3_3.png}
+        \includegraphics[width=1\linewidth]{pic/figure4_3.png}
         \caption{Epinions}
     \end{subfigure}
   \caption{The Distribution of Influence}
@@ -253,17 +258,17 @@ By combining (2), (4), (5) and (6), the objective function of TriSR can be formu
 \end{equation}
 with three hyperparameters $\alpha$, $\beta$, $\gamma$ indicates the importance of each dimension in $Tri$. 
 To visualize the difference between similarly and $Tri$, we choose the user with the most friends in Dianping, drawing the distribution 
-of the distance between him and his friends. Fig 4. shows that $Tri$ has a smoother distribution.
+of the distance between him and his friends. Fig 5. shows that $Tri$ has a smoother distribution.
 \begin{figure}[h]    
   \centering
   \begin{subfigure}{0.4\textwidth}
     \centering
-      \includegraphics[width=1\linewidth]{pic/figure4_1.png}
+      \includegraphics[width=1\linewidth]{pic/figure5_1.png}
     \caption{Similarity}
   \end{subfigure}%
   \begin{subfigure}{0.4\textwidth}
   \centering
-      \includegraphics[width=1\linewidth]{pic/figure4_2.png}
+      \includegraphics[width=1\linewidth]{pic/figure5_2.png}
     \caption{$Tri$}
   \end{subfigure}%
 \caption{The Distribution of the Distance to the User with the Most Friends in Dianping}
@@ -349,7 +354,7 @@ the rate is $90\%$ in Epinions. We use Adam (at first) and Mini-batch SGD (close
 \subsection{Impact of Parameters}
 Since $\beta$ in our model is similar with $\beta$ in SR, here we 
 only do some experiments in $\alpha$ and $\gamma$ on Douban dataset. 
-As is shown in Fig 5. , a large parameter ($\sim 10^2$) 
+As is shown in Fig 6. , a large parameter ($\sim 10^2$) 
 leads to a catastrophe but a small one ($\sim 10^{-2}$) does not lose too much performance 
 because it approximates to the SR model. 
 And it also shows that $\alpha=2$, $\gamma=5$ ($\sim 10^{0}$) is relatively optimal.
@@ -357,12 +362,12 @@ And it also shows that $\alpha=2$, $\gamma=5$ ($\sim 10^{0}$) is relatively opti
   \centering
   \begin{subfigure}{0.4\textwidth}
     \centering
-      \includegraphics[width=1\linewidth]{pic/figure5_1.png}
+      \includegraphics[width=1\linewidth]{pic/figure6_1.png}
     \caption{Impact of $\alpha$}
   \end{subfigure}%
   \begin{subfigure}{0.4\textwidth}
   \centering
-      \includegraphics[width=1\linewidth]{pic/figure5_2.png}
+      \includegraphics[width=1\linewidth]{pic/figure6_2.png}
     \caption{Impact of $\gamma$}
   \end{subfigure}%
 \caption{Impact of Parameters}
