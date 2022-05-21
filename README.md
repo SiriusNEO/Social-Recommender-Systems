@@ -6,10 +6,10 @@
 
 ## Catalogue
 
+- Mini Paper: [Tridimensional Regularization with Analysis in Social Network for Recommender Systems](minipaper/minipaper.pdf)
+- Slide for Presentation: [Slide](pre/slide.pdf)
 - Source code:  `src/`
-- Jupyter Notebook:  [Notebook](src/notebook.ipynb)
-- Mini Paper: [Regularization with Analysis in Social Network for Recommender Systems](minipaper/minipaper.pdf)
-- Slide for Presentation: [Slide](pre/presentation.pdf)
+- Jupyter Notebook Demo:  [Notebook](src/notebook.ipynb)
 
 
 

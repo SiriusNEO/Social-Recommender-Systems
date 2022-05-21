@@ -249,7 +249,7 @@ based on the idea that "familiars will not cheat us".
 
 We adopt a direct familiarity measure \cite{liang2012pr} according to the proportion of common friends.
 \begin{equation}
-  {Fam}(u, v) = \frac{|\mathcal{N}(u) \cap \mathcal{N}(v)|}{\sqrt{|\mathcal{N}(u)|} \sqrt{|\mathcal{N}(v)|}}
+  Fam(u, v) = \frac{\vert \mathcal{N}(u) \cap \mathcal{N}(v) \vert}{\sqrt{\vert \mathcal{N}(u) \vert} \sqrt{\vert \mathcal{N}(v) \vert}}
 \end{equation}
 \subsection{Our Model}
 By combining (2), (4), (5) and (6), the objective function of TriSR can be formulated as
@@ -258,7 +258,7 @@ By combining (2), (4), (5) and (6), the objective function of TriSR can be formu
 \end{equation}
 with three hyperparameters $\alpha$, $\beta$, $\gamma$ indicates the importance of each dimension in $Tri$. 
 To visualize the difference between similarly and $Tri$, we choose the user with the most friends in Dianping, drawing the distribution 
-of the distance between him and his friends. Fig 5. shows that $Tri$ has a smoother distribution.
+of $e^{-Sim}-1$ and $e^{-Tri}-1$ between him and his friends. Fig 5. shows that $Tri$ has a smoother distribution.
 \begin{figure}[h]    
   \centering
   \begin{subfigure}{0.4\textwidth}
@@ -299,10 +299,10 @@ All rating scores are scaled to $(0, 5]$.
 We mainly use two popular metrics in the field of recommender systems: 
 Mean Absolute Error (MAE) and Root Mean Square Error (RMSE). They are defined as follows.
 $$
-MAE = \frac{\sum_{(i, j, R_{ij}) \in T} |\hat{R}_{ij} - R_{ij}|}{|T|}
+MAE = \frac{\sum_{(i, j, R_{ij}) \in T} \vert\hat{R}_{ij} - R_{ij}\vert}{\vert T \vert}
 $$
 $$
-RMSE = \sqrt{ \frac{\sum_{(i, j, R_{ij}) \in T} (\hat{R}_{ij} - R_{ij})^2}{|T|} }
+RMSE = \sqrt{ \frac{\sum_{(i, j, R_{ij}) \in T} (\hat{R}_{ij} - R_{ij})^2}{\vert T \vert} }
 $$
 where $T$ is the test set with each test rating being a triple $(user, item, score)$.
 
