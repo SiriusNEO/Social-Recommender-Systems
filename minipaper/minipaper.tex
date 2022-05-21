@@ -93,7 +93,7 @@
 \begin{abstract}
   Matrix factorization with social regularization is a simple but effective social 
   recommending approach. However, there is still 
-  much information in social networks
+  much information on social networks
   waiting for us to extract.
   In this paper, we try to improve this model 
   by weighing friends with similarity, influence and familiarity.
@@ -110,21 +110,21 @@ need of information. By the fact that the dimension of truly essential features 
 \textbf{Matrix Factorization (MF)} \cite{ko2009mf} is proposed as a traditional method.
 
 It is intuitive that 
-social network information in websites (e.g. "Follow" network in Douban) 
+social networks in websites (e.g. "Follow" networks in Douban) 
 can be used to boost recommender systems. Based on the matrix factorization framework, 
-a \textbf{Social Regularization (SR)} \cite{ma2011rsr} term is added to utilize the information of friend relationships 
+a \textbf{Social Regularization (SR)} \cite{ma2011rsr} term is added to utilize the information on friend relationships 
 (edges in the network), based on the idea that it is more possible for friends to 
 have similar ratings.
 
 However, this method does not make 
-the most of information in the network. A basic observation is that people treat 
+the most of information on the networks. A basic observation is that people treat 
 their friends or followees differently in the real world.
 In this paper, we adopt two possible factors abstracted from real social relationship:
 influence and familiarity, which is able to be analyzed in the network. 
 With these adjustments, \textbf{Tridimensional Social Regularization (TriSR)} 
 is proposed by using a tridimensional distance 
 $Tri = (similarity, influence, familiarity)$ 
-to weigh the friendship in social network. The experimental result shows
+to weigh the friendship in social networks. The experimental result shows
 that TriSR has a slight improvement on most of our datasets averagely.
 
 The rest of this paper is organized as follows: 
@@ -162,7 +162,7 @@ where $m$ is the number of users, $n$ is the number of items, $\mathcal{N}(i)$ i
 the neighbours of user i, $I_{ij} \in \{0, 1\}$ indicates whether user $i$ has rated item $j$. 
 Many social recommending approaches \cite{ma2011rsr, jam2010trust, ma2009rste} are based on this framework.
 \subsection{Social Regularization}
-SR improves MF by utilizing information in social network. Fig 2. shows an exmaple in real world rating website. The key idea is that a movie 
+SR improves MF by utilizing information on social networks. Fig 2. shows an exmaple in real world rating website. The key idea is that a movie 
 received many positive feedbacks among your friends will more probably attract you. 
 Therefore it is rational that the user in Fig 2. gives "Star Wars" a high score. 
 
@@ -384,7 +384,7 @@ TriSR has a better performance in a user-oriented platform like Douban and Epini
 our utilization of users' social information.
 
 However, the improvement is not so much as we except. Further work on item-oriented 
-platforms and directed social network is needed. 
+platforms and directed social networks is needed. 
 
 \bibliographystyle{abbrv}
 \bibliography{references}
