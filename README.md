@@ -20,7 +20,7 @@
 - [x] UserCF & ItemCF
 - [x] Matrix Factorization
 - [x] Social Regularization
-- [x] Triple Social Regularization
+- [x] Tridimensional Social Regularization
 - [x] Adam Optimizer
 - [x] Demo Notebook
 
