@@ -1,15 +1,8 @@
-# Social-Recommender-Systems
+# Social Recommender Systems
 
-🤗 CS3612 Course Project, An exploration in Social Recommender Systems. 
+[Source Code](src/) | [Mini Paper](minipaper/minipaper.pdf) | [Slide](pre/slide.pdf) | [Jupyter Notebook Demo](src/notebook.ipynb)
 
-
-
-## Catalogue
-
-- Mini Paper: [Tridimensional Regularization with Analysis in Social Network for Recommender Systems](minipaper/minipaper.pdf)
-- Slide for Presentation: [Slide](pre/slide.pdf)
-- Source code:  `src/`
-- Jupyter Notebook Demo:  [Notebook](src/notebook.ipynb)
+🤗 CS3612 Machine Learning Course Project, An exploration in Social Recommender Systems. 
 
 
 
@@ -23,6 +16,7 @@
 - [x] Tridimensional Social Regularization
 - [x] Adam Optimizer
 - [x] Demo Notebook
+- [x] Mini Paper
 
 
 
